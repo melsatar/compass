@@ -83,10 +83,10 @@ module Compass
       # TODO: Deprecate the src/config.rb location.
       KNOWN_CONFIG_LOCATIONS = ['config/compass.rb', ".compass/config.rb", "config/compass.config", "config.rb", "src/config.rb"]
 
-      # Finds the configuration file, if it exists in a known location.
+      # Finds the configuration file, if it exist in a known location.
       def detect_configuration_file(project_path = nil)
         possible_files = KNOWN_CONFIG_LOCATIONS.map{|f| projectize(f, project_path) }
-        possible_files.detect{|f| File.exists?(f)}
+        possible_files.detect{|f| File.exist?(f)}
       end
 
       def handle_configuration_change!
